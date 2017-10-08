@@ -13,3 +13,35 @@ tr.levelERROR, tr.levelFATAL {
 tr.levelWARN {
     color:orange;
 }
+
+tr.thread1 {
+    background-color:#FFFFFF;
+}
+
+tr.thread2 {
+    background-color:#DDDDDD;
+}
+
+tr.thread3 {
+    background-color:#DDDD00;
+}
+
+tr.thread4 {
+    background-color:#FFFF00;
+}
+
+tr.thread5 {
+    background-color:#00DD00;
+}
+
+tr.thread6 {
+    background-color:#00FF00;
+}
+
+tr.thread7 {
+    background-color:#0000DD;
+}
+
+tr.thread8 {
+    background-color:#0000FF;
+}

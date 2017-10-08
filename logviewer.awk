@@ -8,6 +8,7 @@ print "<html>\n" \
   " <table class = 'LogTable'>\n" \
   " <tr><td colspan='5'>"
  FS = "\t"
+ curThreadNum = 0
 }
 
 {
@@ -18,8 +19,13 @@ print "<html>\n" \
 }
 
 $2 ~ /(INFO|DEBUG|ERROR|WARN|TRACE|FATAL)/ {
+    if ($3 in threadArray) {
+	#threadArray[$3] = ++ curThreadNum
+    } else {
+	threadArray[$3] = ++ curThreadNum
+    }
     print "</td></tr>\n"
-    printf ("<tr class='level%s'>", $2)
+    printf ("<tr class='level%s thread%s'>", $2, threadArray[$3])
     print "<td>" $1 "</td><td>" $2 "</td><td>" $3 "</td><td>" $4 "</td><td>" $5
 }
 
