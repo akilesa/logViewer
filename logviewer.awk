@@ -20,11 +20,13 @@ print "<html>\n" \
 }
 
 $2 ~ /(INFO|DEBUG|ERROR|WARN|TRACE|FATAL)/ {
-    
-    print "</td></tr>\n<tr><td>" $1 "</td><td>" $2 "</td><td>" $3 "</td><td>" $4 "</td><td>" $5
-    #print "</td></tr>\n<tr><td>" $1 "</td><td>" $2
+    print "</td></tr>\n"
+    printf ("<tr class='level%s'>", $2)
+    print "<td>" $1 "</td><td>" $2 "</td><td>" $3 "</td><td>" $4 "</td><td>" $5
 }
+
 $2 !~ /(INFO|DEBUG|ERROR|WARN|TRACE|FATAL)/ {print "<BR>" $0}
+
 END {
     print "</td></tr>\n"	 \
   "</table>\n"   \

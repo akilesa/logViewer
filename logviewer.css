@@ -1,2 +1,15 @@
 
-table, td {padding:3px;}
+table, td {
+    padding:3px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+tr.levelERROR, tr.levelFATAL {
+    color:red;
+}
+
+tr.levelWARN {
+    color:orange;
+}
