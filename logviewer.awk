@@ -8,7 +8,6 @@ print "<html>\n" \
   " <table class = 'LogTable'>\n" \
   " <tr><td colspan='5'>"
  FS = "\t"
- # FPAT = "(^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9],[0-9][0-9][0-9])|(INFO|DEBUG|ERROR|WARN|TRACE|FATAL)|(\[)"
 }
 
 {
@@ -16,7 +15,6 @@ print "<html>\n" \
     $0 = gensub(/ +\[/, "\t", "1")
     $0 = gensub(/\] +\[/, "\t", "1")
     $0 = gensub(/\] +- +/, "\t", "1")    
-    #print $1
 }
 
 $2 ~ /(INFO|DEBUG|ERROR|WARN|TRACE|FATAL)/ {
